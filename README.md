@@ -1,4 +1,4 @@
-# Project 10-12 - Photo Captions
+# Photo Captions
 
 In this project I've covered several important topics:
 
