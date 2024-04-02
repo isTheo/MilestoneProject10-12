@@ -21,10 +21,9 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         
 
         
-    }//viewDidLoad
+    }
     
     
-    //setting tableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photos.count
     }
@@ -113,7 +112,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
     }
     
     
-    
+    // handling long press gesture and setting of the UIAlertControllers
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         guard sender.state == .began else { return }
         
@@ -126,7 +125,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         
         let alertController = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
         
-        // Rename Action
+        
         let renameAction = UIAlertAction(title: "Rename", style: .default) { _ in
             let renameAlertController = UIAlertController(title: "Rename photo", message: "", preferredStyle: .alert)
             renameAlertController.addTextField { textField in
@@ -148,7 +147,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         
         alertController.addAction(renameAction)
         
-        // Delete Action
+
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
             self.photos.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -156,11 +155,9 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         
         alertController.addAction(deleteAction)
         
-        // Cancel Action
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        // Present UIAlertController
         present(alertController, animated: true, completion: nil)
     }
     
