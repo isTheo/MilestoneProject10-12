@@ -9,7 +9,7 @@ In this project I've covered several important topics:
 - Utilizing FileManager's appendingPathComponent() method.
 - Learning about UserDefaults for reading and writing user preferences.
 
-## Bonus (not required by the project):
+## Extra (not required by the project):
 - I added the addGestureRecognizer method to experiment with handling long-press gestures.
 
 
